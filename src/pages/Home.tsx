@@ -104,7 +104,7 @@ function Home() {
           </div>
 
           <div className="mt-16 text-center">
-            <Button size="lg" >
+            <Button size="lg" className='colaborate' >
               <a className='text-xl' href="/form">Participe</a>
             </Button>
           </div>

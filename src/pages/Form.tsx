@@ -92,11 +92,12 @@ export default function Form() {
   }
 
   const dogBreeds = [
-    { value: "SRD", label: "SRD (Sem Raça Definida)" },
-    { value: "labrador", label: "Labrador" },
+    { value: "SRD", label: "Vira-lata (SRD)" },
+    { value: "pinsher", label: "Pinscher" },
     { value: "poodle", label: "Poodle" },
-    { value: "bulldog", label: "Bulldog" },
-    { value: "golden", label: "Golden Retriever" },
+    { value: "salsicha", label: "Salsicha" },
+    { value: "pitbull", label: "Pitbull e misturas" },
+    { value: "golden", label: "Labrador e Golden Retriever (misturados)" },
     { value: "outro", label: "Outro (Digite manualmente)" }
   ];
 
@@ -149,7 +150,6 @@ export default function Form() {
     }
     finally {
       setLoading(false)
-      console.log("CHEGOU NO FINALLY!")
     }
   };
 
@@ -160,7 +160,7 @@ export default function Form() {
           <CardTitle className="mt-4 mb-8">Ajude um Doguinho em situação vulnerável</CardTitle>
           <CardDescription className="mt-8">Preencha este formulário com as informações necessárias para ajudar a resgatar mais um cão.</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 p-4">
           <div className="space-y-2">
             <Label>Nome Completo</Label>
             <Input id="nome" {...register("nome", { required: "Campo Nome é obrigatório" })} placeholder="Seu Nome Completo" />
@@ -181,7 +181,7 @@ export default function Form() {
               <SelectTrigger>
                 <SelectValue placeholder="Selecione seu estado (UF)" />
               </SelectTrigger>
-              <SelectContent className="bg-white">
+              <SelectContent className="bg-white uf-field">
                 {UFs.map((uf) => (
                   <SelectItem key={uf.id} value={uf.sigla}>{uf.nome}</SelectItem>
                 ))}
@@ -192,9 +192,9 @@ export default function Form() {
 
           <div className="space-y-2">
             <Label>Cidade</Label>
-            <Select onValueChange={(value) => setValue("city", value, { shouldValidate: true })}>
+            <Select onValueChange={(value) => setValue("city", value, { shouldValidate: true })} >
               <SelectTrigger>
-                <SelectValue placeholder="Selecione sua cidade" />
+                <SelectValue className="city-field" placeholder="Selecione sua cidade" />
               </SelectTrigger>
               <SelectContent className="bg-white">
                 {cities.map((city) => (
@@ -212,6 +212,7 @@ export default function Form() {
           </div>
 
           <div className="space-y-2">
+            <Label>Raça do cachorro</Label>
             <Select1
               options={dogBreeds}
               placeholder="Selecione ou busque a raça"
@@ -234,8 +235,6 @@ export default function Form() {
 
             {errors.breed && <span className="text-red-500 text-sm">{errors.breed.message}</span>}
           </div>
-
-
 
           <div className="space-y-2">
             <p className="text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50">Imagem do cão em situação vulnerável</p>

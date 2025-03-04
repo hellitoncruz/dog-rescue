@@ -145,6 +145,7 @@ header {
     background-color: unset;
     color: #1F4350;
   }
+
 }
 
 
@@ -202,7 +203,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1F4350;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -330,8 +330,26 @@ button:focus-visible {
     }
   }
 
+  #react-select-2-input,
   #react-select-3-input {
-    -webkit-box-shadow: none;
+    display: none;
+  }
+
+  .css-13cymwt-control {
+    border: 1px solid #1F4350;
+    border-radius: unset;
+  }
+  
+  .css-1jqq78o-placeholder {
+    color: #1F4350;
+    font-size: 15px;
+    font-size: 0.875rem;
+  }
+
+  .css-1xc3v61-indicatorContainer {
+    svg {
+      color: #1F4350;
+    }
   }
 
   input:focus {
@@ -354,8 +372,6 @@ button:focus-visible {
     -webkit-text-fill-color: white;
     -webkit-box-shadow: 0 0 0px 1000px #1F4350 inset;
   }
-
-
 
   button {
     background: transparent;
@@ -845,3 +861,7 @@ select {
 }
 
 // HOME END
+
+.colaborate {
+  background-color: #1F4350 !important;
+}

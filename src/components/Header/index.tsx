@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { PawPrint, Menu } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import '../../styles.scss'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,7 +33,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button className="bg-white" variant="ghost" size="sm">
+            <Button className="bg-white menu-icon" variant="ghost" size="sm">
               <Menu className="h-6 w-6" />
               <span className="sr-only bg-white">Toggle menu</span>
             </Button>
@@ -45,7 +46,7 @@ export default function Header() {
               <a href="/dogs" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
                 Dogs
               </a>
-              <Button className="w-full justify-center" onClick={() => setIsOpen(false)}>
+              <Button className="w-full justify-center colaborate" onClick={() => setIsOpen(false)}>
                 <a href="/form">Ajude um cão</a>
               </Button>
             </div>
