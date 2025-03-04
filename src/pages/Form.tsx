@@ -92,7 +92,7 @@ export default function Form() {
   }
 
   const dogBreeds = [
-    { value: "SRD", label: "Vira-lata (SRD)" },
+    { value: "Sem Raça Definida", label: "Vira-lata (SRD)" },
     { value: "pinsher", label: "Pinscher" },
     { value: "poodle", label: "Poodle" },
     { value: "salsicha", label: "Salsicha" },
