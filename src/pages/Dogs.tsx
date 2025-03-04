@@ -29,7 +29,7 @@ function Dogs() {
   const [hasMore, setHasMore] = useState(true); // Flag para indicar se há mais registros
 
   const instance = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://api-dog-rescue.vercel.app",
     timeout: 3000,
   });
 

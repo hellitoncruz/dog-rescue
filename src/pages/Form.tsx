@@ -129,7 +129,7 @@ export default function Form() {
         formData.append("image", data.image[0]);
       }
 
-      await axios.post("http://localhost:5000/dogs", formData, {
+      await axios.post("https://api-dog-rescue.vercel.app/dogs", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       })
 
