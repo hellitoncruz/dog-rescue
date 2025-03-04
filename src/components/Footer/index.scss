@@ -1,0 +1,12 @@
+@use "../../variables";
+
+.footer {
+    background: variables.$primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .copyrights {
+        color: variables.$light-color;
+    }
+}
