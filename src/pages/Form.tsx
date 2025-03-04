@@ -87,7 +87,7 @@ export default function Form() {
       setValue("image", e.target.files as FileList, { shouldValidate: true })
     } else {
       setImagePreview(null)
-      setValue("image", undefined)
+      setValue("image", e.target.files ?? new DataTransfer().files, { shouldValidate: true })
     }
   }
 

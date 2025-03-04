@@ -32,7 +32,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button className="bg-white" variant="ghost" size="icon">
+            <Button className="bg-white" variant="ghost" size="sm">
               <Menu className="h-6 w-6" />
               <span className="sr-only bg-white">Toggle menu</span>
             </Button>
