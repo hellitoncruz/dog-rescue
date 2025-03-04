@@ -27,6 +27,7 @@ function Dogs() {
   const [loading, setLoading] = useState(true);
   const [lastDocId, setLastDocId] = useState<string | null>(null); // Último ID da consulta
   const [hasMore, setHasMore] = useState(true); // Flag para indicar se há mais registros
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const instance = axios.create({
     baseURL: "https://api-dog-rescue.vercel.app",
@@ -100,7 +101,7 @@ function Dogs() {
               <CardContent className="p-0 h-full">
                 <div className="flex h-full">
                   <div className="relative h-64 md:h-auto w-1/3">
-                    <img src={animal.image || "/placeholder-upload-img.png"} alt={animal.breed} className="object-cover w-full h-full" />
+                    <img src={animal.image || "/placeholder-upload-img.png"} alt={animal.breed} className="object-cover w-full h-full" onClick={() => setSelectedImage(animal.image)} />
                   </div>
                   <div className="flex flex-col justify-between p-6 w-2/3 right-content">
                     <div>
@@ -117,7 +118,7 @@ function Dogs() {
                     <div className="mt-6">
                       <Button>
                         <a
-                          href={`https://wa.me/77991942465?text=${encodeURIComponent(
+                          href={`https://wa.me/${animal.tel}?text=${encodeURIComponent(
                             `Olá, ${animal.nome}! \n\nEstou interessado no doguinho que você postou no Dog Rescue e gostaria de saber mais informações.\n\nRaça: ${animal.breed}\n\nVeja a foto aqui: ${animal.image}\n\nPoderia me contar mais sobre ele?`
                           )}`}
                           target="_blank"
@@ -147,6 +148,19 @@ function Dogs() {
           Ver mais
         </Button>
       )}
+
+      {/* MODAL DE IMAGEM */}
+      {selectedImage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-full max-h-full p-4">
+            <button className="absolute top-4 right-4 text-white" onClick={() => setSelectedImage(null)}>
+              <Plus size={32} />
+            </button>
+            <img src={selectedImage} alt="Dog" className="max-w-full max-h-full img-modal" />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

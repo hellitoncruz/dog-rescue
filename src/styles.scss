@@ -673,6 +673,11 @@ select {
     padding: 0 16px;
   }
 
+  .img-modal {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .see-more {
     background: #1F4350;
     color: #fff;
@@ -695,13 +700,6 @@ select {
     @media (min-width: 1024px) {
       min-width: 882px;
     }
-  }
-
-
-
-  img {
-    height: 382px;
-    width: 382px;
   }
 
   button {
