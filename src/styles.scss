@@ -339,7 +339,7 @@ button:focus-visible {
     border: 1px solid #1F4350;
     border-radius: unset;
   }
-  
+
   .css-1jqq78o-placeholder {
     color: #1F4350;
     font-size: 15px;
@@ -790,7 +790,7 @@ select {
         overflow: hidden;
         text-overflow: ellipsis;
       }
-  
+
       .cityUF {
         display: -webkit-box;
         max-width: 250px;
@@ -800,7 +800,7 @@ select {
         overflow: hidden;
         text-overflow: ellipsis;
       }
-  
+
       .street {
         display: -webkit-box;
         max-width: 250px;
@@ -819,6 +819,21 @@ select {
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+
+      .card-title {
+        .date {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background: hsl(0deg 1.09% 9.49% / 85%);
+          color: #fff;
+          padding: 2px 4px;
+        }
+      }
+  
+      .right-content {
+        position: relative;
       }
     }
 
